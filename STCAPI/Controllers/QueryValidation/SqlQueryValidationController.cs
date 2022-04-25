@@ -39,6 +39,7 @@ namespace STCAPI.Controllers.QueryValidation
                 dbModel.IsDeleted = false;
                 dbModel.CreatedBy = model.UserName;
                 dbModel.UserName = model.UserName;
+                dbModel.SqlQuery = model.SqlQuery;
 
                 var respons = await _sqlQueryValidationRepo.CreateEntity(new List<SqlQueryValidationModel>() { dbModel }.ToArray());
                 return Ok(respons);
